@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+/* Navigation Menu ******************************************************/
+
+.nav-bar {
+  background-color: #282c34;
+  color: rgb(163, 159, 159);
+  margin-top: -20px;
+  margin-bottom: -16px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.nav-bar a {
+  color: white;
+}
+
+/* .nav-bar p {
+  background-color: #282c34;
+} */
+
+/* Error Pages ******************************************************/
+.error-page {
+  background-color: #282c34;
+  color: rgb(163, 159, 159);
+  margin-top: -20px;
+  margin-bottom: -16px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
