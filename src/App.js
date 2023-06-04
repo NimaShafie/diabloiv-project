@@ -7,7 +7,7 @@ const Test = () => {
   return (
     <>
     <h4>About</h4>
-    <p>Let's get this workin!</p>
+    <p>Let's get this workin!!</p>
     </>
   );
 }
