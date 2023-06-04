@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# DiabloIV Project
+<!-- shields.io need to go here <br /> -->
+***
+Full stack web application that will integrate with the [Blizzard API](https://develop.battle.net/) for Diablo IV. Currently the Diablo IV API has not been released yet, so in the mean time, this React application that is being hosted on AWS using Amplify will be created.<br />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+README is currently being worked on.
 
-## Available Scripts
 
-In the project directory, you can run:
+<!-- The competition is simple: use machine learning to create a model that predicts which passengers survived the Titanic shipwreck.
+<br /><br />
+## Table of Contents
+...
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br /><br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation:
+This project is packaged and running on virtual environments managed by [Pipenv](https://github.com/pypa/pipenv)<br />
+The following instructions were written by me below, I have used this configuration succesfully on Windows and Linux (Ubuntu) working with the VS Code IDE.
 
-### `npm test`
+Install the pipenv package by running:
+```
+pip install --user pipenv
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Make sure your terminal is pointing to the project directory:
+```
+cd myproject
+```
+and install the Pipenv requests by running:
+```
+pipenv install requests
+```
+You should see a confirmation similar to this <br /><br />
 
-### `npm run build`
+![Successful Virtual Env](images/successful-pipenv.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Activate the project's virtual environment by running:
+```
+pipenv shell
+```
+<br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Successful Shell Launch](images/launch-shell.png)
+<br />
 
-### `npm run eject`
+This virtual environment holds all prior pip packages already installed on your machine; we can view all dependencies at any time by using command:
+```
+pipenv graph
+```
+Once we are in the shell by running the above ```pipenv shell``` command, we will be able to install pip packages that are only held in the newly created virtual environment as described in the newly created Pipfile's.
+<br />
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Now we can install a pip package that will only be held in this new virtual environment by using:
+```
+pipenv install numpy
+```
+For example, this will install the [numpy](https://pypi.org/project/numpy/) package that will only be valid in this virtual enviornment.
+<br />
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Now numpy will show up on both "```pipenv graph```" and "```pip list```" only for this virtual environment.
+<br />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Running pip list while still in the virtual environment shows all pip packages installed globally on the machine, plus any packages installed using
+"```pipenv install ...```":
+<br />
+<br />
+![Pip List Virtual Environment](images/pip-list-venv.png)
+<br />
+<br />
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+We may test this by running such commands, and then exiting out of our virtual environment by running: ```exit```
+<br />
+<br />
 
-## Learn More
+Running pip list while we exit the virtual environment shows pipenv on the list of packages, minus all packages installed using the "```pipenv install ...```" command:
+<br />
+![Pip List No Virtual Environment](images/pip-list-no-venv.png)
+<br />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Now, we must ensure the file we be run on the correct interperter that contains the virtual environment.
+This example will be shown in VS Code, we want to ensure we choose the correct venv interperter:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Open or create a file with a .py extension (Python)
 
-### Code Splitting
+Change the interpreter by selecting this button at the bottom of VS Code:
+![Pip List Virtual Enviornment](images/select-interpreter.png)
+<br />
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Ensure you select the newly created virtual environment created earlier:
+![Pip List Virtual Enviornment](images/confirm-venv-interpreter.png)
+<br />
+<br />
+Now you should be able to run the file (F5) in VS Code using the new virtual environment interpreter correctly.
 
-### Analyzing the Bundle Size
+<br /><br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## How to use project:
+This project will come pre-loaded with all the supplied data files from the Kaggle competiton, my Machine Learning submission will contain the supervised model that I used to complete the challenge.
 
-### Making a Progressive Web App
+<br /><br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## How to update project (dev/contributions):
 
-### Advanced Configuration
+If you would like to add in more python pip packages, you may use "```pipenv install "package_name"```"<br />
+for example: "```pipenv install numpy```" will install Numpy onto the virtual environment.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Include any extra installs by using the above "```pipenv install <package>```" command
 
-### Deployment
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+2. Update the Piplock file by using the command "```pipenv lock```"
 
-### `npm run build` fails to minify
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<br />
+
+### Understanding Pipenv
+
+* The Pipfile
+Pipfile intends to replace requirements.txt. Pipenv is currently the reference implementation for using Pipfile. It seems very likely that pip itself will be able to handle these files. Also, it’s worth noting that Pipenv is even the official package management tool recommended by Python itself. -->

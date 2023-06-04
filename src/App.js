@@ -1,7 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-// import About from './About.js';
-import Navigation from './Navigation.js';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 

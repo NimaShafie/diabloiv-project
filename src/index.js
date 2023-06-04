@@ -13,7 +13,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Amplify } from 'aws-amplify';
 import config from './aws-exports';
-import Navigation from './Navigation.js';
 import Root from "./routes/Root.js";
 import ErrorPage from "./error-page.js";
 
